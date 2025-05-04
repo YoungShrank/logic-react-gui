@@ -1,0 +1,88 @@
+{
+    "AS": [],
+    "AX": {
+        "theorem_name": "∀ x : N , ( ADD ( x , _0 , ) ) = x"
+    },
+    "CC": [
+        "∀ x : N , ( ADD ( x , _0 , ) ) = x"
+    ],
+    "GL": {
+        "ADD": {
+            "name": "ADD",
+            "sort": "Func[Tuple[N,N],N]",
+            "type_": "one"
+        },
+        "Insect": {
+            "name": "Insect",
+            "sort": "Func[Set[Set],Set[Math]]",
+            "type_": "one"
+        },
+        "N": {
+            "name": "N",
+            "sort": "Set",
+            "type_": "one"
+        },
+        "Power": {
+            "name": "Power",
+            "sort": "Func[Set,Set[Set]]",
+            "type_": "one"
+        },
+        "Subset": {
+            "name": "Subset",
+            "sort": "Func[Tuple[Set,Set],Prop]",
+            "type_": "one"
+        },
+        "T": {
+            "name": "T",
+            "sort": "Prop",
+            "type_": "one"
+        },
+        "Union": {
+            "name": "Union",
+            "sort": "Func[Set[Set],Set[Math]]",
+            "type_": "one"
+        },
+        "_0": {
+            "name": "_0",
+            "sort": "N",
+            "type_": "one"
+        },
+        "⊥": {
+            "name": "⊥",
+            "sort": "Prop",
+            "type_": "one"
+        }
+    },
+    "LC": {
+        "x": {
+            "name": "x",
+            "sort": "N",
+            "type_": "any"
+        }
+    },
+    "LN": [],
+    "MD": "Proof",
+    "RL": {
+        "0": "p|-p ∨ q",
+        "1": "q|-p ∨ q",
+        "2": "p ∧ q|-p",
+        "3": "p ∧ q|-q",
+        "4": "p ∨ p|-p",
+        "5": "¬ ¬ p|-p",
+        "6": "p -> q|-¬ p ∨ q",
+        "7": "¬ p ∨ q|-p -> q",
+        "8": "p ∨ q|-q ∨ p",
+        "9": "p,q|-p ∧ q",
+        "10": "p -> q,p|-q",
+        "11": "p,¬ p|-⊥",
+        "12": "|-¬ ⊥",
+        "13": "|-T",
+        "14": "|-p -> p",
+        "15": "|-p ∨ T"
+    },
+    "TH": "∀ x : N , ( ADD ( ADD ( x , _0 , ) , _0 , ) ) = x",
+    "TM": {
+        "test": "x"
+    },
+    "TS": {}
+}
