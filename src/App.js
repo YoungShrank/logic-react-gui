@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import WorkArea from './main/workarea/views/components/WorkArea';
+import Wrapper from './main/workarea/views/components/Wrapper';
 function App() {
   return (
     <div className="App">
-      <WorkArea />
+      <Wrapper />
     </div>
   );
 }

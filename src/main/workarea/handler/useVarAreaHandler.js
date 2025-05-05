@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-
+/**
+ * 变量区数据和事件处理
+ * @param {*} commonVarList 
+ * @returns 
+ */
 function useVarAreaHandler(commonVarList) {
     //console.log(useState(commonVarList))
     const [varList, setVarList] = useState(commonVarList);

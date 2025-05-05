@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-
+/**
+ * 项数据和事件处理
+ * @param {*} commonTermData 
+ * @returns 
+ */
 function useTermHandler(commonTermData) {
 
     const [termData, setTermData] = useState(commonTermData);

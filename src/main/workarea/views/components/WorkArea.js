@@ -1,41 +1,50 @@
 import ProofArea from "./ProofArea";
 import RuleArea from "./RuleArea";
-import VarArea from "./VarArea";
+import LocalVarArea from "./LocalVarArea";
+import TermsArea from "./common/TermsArea";
 import Horizer from "../../../common/views/layout/Horizer";
 import useWorkAreaHandler from "../../handler/useWorkAreaHandler";
 import AssistContext from "../../message/context/AssistContext";
 import AssitArea from "./AssitArea";
+import LineArea from "./LineArea";
+import LocalArea from "./LocalArea";
 import { useState } from "react";
-const RuleList = []
-const ProofList = []
-/**
- *     const head = [
-        {key: "varName", value: "Variable Name"},
-        {key: "mathType", value: "Math Type"},
-        {key: "referType", value: "Refer Type"}
-    ]
- */
-const VarList = [
-    {varName: "x", mathType: "Real", referType: "bound"},
-    {varName: "y", mathType: "Tuple", referType: "one"},
-    {varName: "z", mathType: "Func", referType: "any"}
-]
+import { RuleList, ProofList, VarList, assitTermList } from "../data/data";
+import { Provider } from "react-redux";
+import store from "../../message/store";
+import AxiomArea from "./AxiomArea";
+import AssistMapArea from "./AssitMapArea";
 
-const assitTermList = []
+/**
+ * 工作区View
+ * @returns 
+ */
 function WorkArea() {
 
-    const {handleSave, handleChekedChange, handleInputChange} = useWorkAreaHandler();
+    const {handleSave, handleChekedChange, handleInputChange, handleBroadCast} = useWorkAreaHandler();
     return (
 
         <div onInput={handleInputChange} onChange={handleChekedChange}>Work Area
             <AssistContext.Provider value={useState(assitTermList)}>
-                <Horizer>
-                    <RuleArea commonTermList={RuleList}/>
-                    <ProofArea commonTermList = {ProofList} commonAssitTermList={assitTermList}/>
-                    <AssitArea/>
-                    <VarArea commonVarList={VarList}/>
-                </Horizer>
-                <button onClick= {handleSave}>Save</button>
+                <Provider store={store}>
+                    <Horizer>
+                        <RuleArea commonTermList={RuleList}/>
+                        <AxiomArea></AxiomArea>
+                        <LineArea/>
+                        <LocalArea/>
+                    </Horizer>
+                    <Horizer>
+                        <AssistMapArea></AssistMapArea>
+                        <LocalVarArea />
+                    </Horizer>
+                    
+                    <button onClick= {handleSave}>Save</button>
+                    <button onClick= {handleBroadCast}>BroadCast</button>
+                    <button onClick= {handleInputChange}>InputChange</button>
+                    <button onClick= {handleChekedChange}>ChekedChange</button>
+                    <button onClick= {handleSave}>Save</button>
+                    
+                </Provider>
             </AssistContext.Provider>
         </div>
     );

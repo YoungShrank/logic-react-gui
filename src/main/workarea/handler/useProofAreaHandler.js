@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { useContext } from "react";
 import AssistContext from "../message/context/AssistContext";
+/**
+ * 证明区数据和事件处理
+ * @param {*} commonTermList 
+ * @param {*} commonAssitTermList 
+ * @returns 
+ */
 const useProofAreaHandler = (commonTermList, commonAssitTermList) => {
 
     const [termList, setTermList] = useState(commonTermList);
